@@ -18,7 +18,7 @@ const BASE_URL = (process.env.BASE_URL || `http://localhost:${PORT}`).replace(/\
 app.use(helmet({ contentSecurityPolicy: false }));
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../../../public')));
+app.use(express.static(path.join(__dirname, '..', '..', 'public')));
 
 // Trust proxy (needed on Render for correct IP detection)
 app.set('trust proxy', 1);
