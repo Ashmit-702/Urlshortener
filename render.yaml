@@ -1,0 +1,32 @@
+# render.yaml — Render.com deployment configuration
+# This file tells Render exactly how to deploy SnapLink
+
+services:
+  # ── Web Service (Node.js backend) ────────────────────────────
+  - type: web
+    name: snaplink
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: BASE_URL
+        fromService:
+          type: web
+          name: snaplink
+          property: host
+      - key: DATABASE_URL
+        fromDatabase:
+          name: snaplink-db
+          property: connectionString
+      # Optional: add your Anthropic key in Render dashboard
+      # - key: ANTHROPIC_API_KEY
+      #   value: your_key_here
+
+  # ── PostgreSQL Database ───────────────────────────────────────
+databases:
+  - name: snaplink-db
+    databaseName: snaplink
+    plan: free
