@@ -427,6 +427,11 @@ async function shortenUrl() {
   }
 }
 
+function openShortUrl() {
+  if (!lastCreated) return;
+  window.open(lastCreated.shortUrl, '_blank');
+}
+  
 function copyLastUrl() {
   if (!lastCreated) return;
   navigator.clipboard.writeText(lastCreated.shortUrl).then(() => {
