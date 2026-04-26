@@ -467,7 +467,7 @@ async function loadLinks(sortBy, sortDir) {
       const pwDot = l.hasPassword ? `<span style="display:inline-block;width:7px;height:7px;background:var(--accent2);border-radius:50%;margin-left:4px;vertical-align:middle"></span>` : '';
       const origShort = l.originalUrl.replace(/^https?:\/\//, '').slice(0, 48) + (l.originalUrl.length > 55 ? '...' : '');
       return `<div class="link-row">
-        <div><div class="link-short" onclick="copySlug('${l.shortUrl}')">${l.slug}</div>${pwDot}${expBadge}</div>
+        <div class="link-short" onclick="window.open('${l.shortUrl}','_blank')">${l.slug}</div>
         <div class="link-orig" title="${l.originalUrl}">${origShort}</div>
         <div><span class="clicks-badge">${l.clicks}</span></div>
         <div class="link-date">${ago(l.createdAt)}</div>
