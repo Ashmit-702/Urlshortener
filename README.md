@@ -19,55 +19,7 @@ snaplink/
 
 ---
 
-## 🚀 Deploy to Render (Step by Step)
 
-### Step 1 — Push to GitHub
-```bash
-# In the snaplink folder:
-git init
-git add .
-git commit -m "Initial commit"
-
-# Create a new repo on github.com, then:
-git remote add origin https://github.com/YOUR_USERNAME/snaplink.git
-git push -u origin main
-```
-
-### Step 2 — Create Render account
-Go to **render.com** → Sign up (free)
-
-### Step 3 — Create PostgreSQL database first
-1. Render dashboard → **New → PostgreSQL**
-2. Name it: `snaplink-db`
-3. Plan: **Free**
-4. Click **Create Database**
-5. Wait ~1 minute for it to be ready
-6. Copy the **"Internal Database URL"** — you'll need it next
-
-### Step 4 — Create Web Service
-1. Render dashboard → **New → Web Service**
-2. Connect your GitHub repo
-3. Fill in settings:
-   - **Name:** `snaplink`
-   - **Root Directory:** `backend`
-   - **Build Command:** `npm install`
-   - **Start Command:** `npm start`
-   - **Plan:** Free
-4. Add Environment Variables:
-   | Key | Value |
-   |-----|-------|
-   | `NODE_ENV` | `production` |
-   | `DATABASE_URL` | *(paste Internal Database URL from Step 3)* |
-   | `BASE_URL` | *(your Render URL, e.g. https://snaplink.onrender.com)* |
-5. Click **Create Web Service**
-
-### Step 5 — Done! 🎉
-Your site is live at `https://snaplink.onrender.com`
-
-> ⚠️ **Note:** Free Render services spin down after 15 min of inactivity.
-> First visit after idle takes ~30 seconds to wake up. This is normal on free tier.
-
----
 
 ## 💻 Run Locally
 
@@ -126,4 +78,16 @@ DATABASE_URL=postgresql://postgres:@localhost:5432/snaplink
   "utmMedium": "social",
   "utmCampaign": "launch"
 }
+
+
 ```
+# SnapLink 🔗
+
+A full-stack URL shortener with a built-in analytics engine.  
+Not just short links — track every click by device, browser, OS, and referrer,  
+all while keeping user privacy intact (IPs are SHA-256 hashed, never stored raw).
+
+**Live Demo:** https://snaplink-0ha1.onrender.com  
+> ⚠️ Free tier — may take 20–30 seconds to wake up on first load.
+
+**Stack:** Node.js · Express.js · PostgreSQL · Vanilla JS · Deployed on Render
