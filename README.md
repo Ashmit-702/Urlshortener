@@ -1,4 +1,15 @@
-# SnapLink — URL Shortener (PostgreSQL Edition)
+# SnapLink — URL Shortener
+
+
+A full-stack URL shortener with a built-in analytics engine.  
+Not just short links — track every click by device, browser, OS, and referrer,  
+all while keeping user privacy intact (IPs are SHA-256 hashed, never stored raw).
+
+**Live Demo:** https://snaplink-0ha1.onrender.com  
+> ⚠️ Free tier — may take 20–30 seconds to wake up on first load.
+
+**Stack:** Node.js · Express.js · PostgreSQL · Vanilla JS · Deployed on Render
+
 
 ## Project Structure
 
@@ -81,13 +92,3 @@ DATABASE_URL=postgresql://postgres:@localhost:5432/snaplink
 
 
 ```
-# SnapLink 🔗
-
-A full-stack URL shortener with a built-in analytics engine.  
-Not just short links — track every click by device, browser, OS, and referrer,  
-all while keeping user privacy intact (IPs are SHA-256 hashed, never stored raw).
-
-**Live Demo:** https://snaplink-0ha1.onrender.com  
-> ⚠️ Free tier — may take 20–30 seconds to wake up on first load.
-
-**Stack:** Node.js · Express.js · PostgreSQL · Vanilla JS · Deployed on Render
